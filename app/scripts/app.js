@@ -33,6 +33,16 @@ angular
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
       })
+      .when('/question', {
+        templateUrl: 'views/question.html',
+        controller: 'QuestionCtrl'
+      })
+      .when('/correct', {
+        templateUrl: 'views/correct.html'
+      })
+      .when('/wrong', {
+        templateUrl: 'views/wrong.html'
+      })
       .otherwise({
         redirectTo: '/'
       });
