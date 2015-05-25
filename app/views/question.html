@@ -7,8 +7,6 @@
   </div>
 </div>
 <h3 class="text-center">{{question.question}}</h3>
-<p class="lead text-center" ng-show="isIncorrect()"><s>{{user.answer}}</s></p>
-<p class="lead text-center" ng-show="isIncorrect()">{{question.answer}}</p>
 <form class="form-inline" ng-show="isCorrect() || notSubmitted()">
   <div class="form-group">
     <label class="sr-only" for="answer">Your answer</label>
@@ -18,6 +16,8 @@
     </div>
   </div>
 </form>
+<p class="lead text-center" ng-show="isIncorrect()"><s ng-bind-html="user.answer"></s></p>
+<p class="lead text-center" ng-show="isIncorrect()">{{question.answer}}</p>
 <div class="text-center" ng-show="isIncorrect()">
   <button ng-click="nextQuestion()" class="btn btn-info">Next question <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
 </div>
