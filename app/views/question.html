@@ -3,8 +3,8 @@
   <div class="form-group">
     <label class="sr-only" for="answer">Your answer</label>
     <div class="input-group">
-      <input type="text" class="form-control" id="answer" placeholder="Answer">
-      <a href="#wrong" class="input-group-addon btn-success">OK</a>
+      <input type="text" ng-model="user.answer" class="form-control" id="answer" placeholder="Answer">
+      <div ng-click="submitAnswer()" class="input-group-addon btn-success">OK</div>
     </div>
   </div>
 </form>
