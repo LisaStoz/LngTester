@@ -1,10 +1,23 @@
+<div class="alert-container">
+  <div class="alert alert-danger" role="alert" ng-show="isIncorrect()">
+    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Wrong
+  </div>
+  <div class="alert alert-success" role="alert" ng-show="isCorrect()">
+    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Correct
+  </div>
+</div>
 <h3 class="text-center">{{question.question}}</h3>
-<form class="form-inline">
+<p class="lead text-center" ng-show="isIncorrect()"><s>{{user.answer}}</s></p>
+<p class="lead text-center" ng-show="isIncorrect()">{{question.answer}}</p>
+<form class="form-inline" ng-show="isCorrect() || notSubmitted()">
   <div class="form-group">
     <label class="sr-only" for="answer">Your answer</label>
     <div class="input-group">
-      <input type="text" ng-model="user.answer" class="form-control" id="answer" placeholder="Answer">
+      <input ng-disabled="isCorrect()" type="text" ng-model="user.answer" class="form-control" id="answer" placeholder="Answer">
       <div ng-click="submitAnswer()" class="input-group-addon btn-success">OK</div>
     </div>
   </div>
 </form>
+<div class="text-center" ng-show="isIncorrect()">
+  <button ng-click="nextQuestion()" class="btn btn-info">Next question <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
+</div>
