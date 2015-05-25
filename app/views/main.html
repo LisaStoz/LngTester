@@ -1,59 +1,11 @@
 <ul class="list-group">
-  <li class="list-group-item">
+  <li class="list-group-item" ng-repeat="dictionary in dictionaries">
     <div class="row">
-      <div class="col-xs-7"><a href="#details">Cras justo odio</a></div>
+      <div class="col-xs-7"><a href="#/details/{{dictionary.id}}">{{dictionary.name}}</a></div>
       <div class="col-xs-5 text-center">
-        <a href="#question" type="button" class="btn btn-success"><span class="glyphicon glyphicon-play" aria-hidden="true"></span></a>
+        <a href="#/test/{{dictionary.id}}" type="button" class="btn btn-success"><span class="glyphicon glyphicon-play" aria-hidden="true"></span></a>
         <div>
-          <small>14 questions</small>
-        </div>
-      </div>
-
-    </div>
-  </li>
-  <li class="list-group-item">
-    <div class="row">
-      <div class="col-xs-7"><a href="#details">Cras justo odio</a></div>
-      <div class="col-xs-5 text-center">
-        <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
-        <div>
-          <small>14 questions</small>
-        </div>
-      </div>
-
-    </div>
-  </li>
-  <li class="list-group-item">
-    <div class="row">
-      <div class="col-xs-7"><a href="#details">Cras justo odio</a></div>
-      <div class="col-xs-5 text-center">
-        <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
-        <div>
-          <small>14 questions</small>
-        </div>
-      </div>
-
-    </div>
-  </li>
-  <li class="list-group-item">
-    <div class="row">
-      <div class="col-xs-7"><a href="#details">Cras justo odio</a></div>
-      <div class="col-xs-5 text-center">
-        <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
-        <div>
-          <small>14 questions</small>
-        </div>
-      </div>
-
-    </div>
-  </li>
-  <li class="list-group-item">
-    <div class="row">
-      <div class="col-xs-7"><a href="#details">Cras justo odio</a></div>
-      <div class="col-xs-5 text-center">
-        <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
-        <div>
-          <small>14 questions</small>
+          <small>{{dictionary.questions}} questions</small>
         </div>
       </div>
 

@@ -25,7 +25,7 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/details', {
+      .when('/details/:dictionaryId', {
         templateUrl: 'views/details.html',
         controller: 'DetailsCtrl'
       })
@@ -33,9 +33,9 @@ angular
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
       })
-      .when('/question', {
+      .when('/test/:dictionaryId', {
         templateUrl: 'views/question.html',
-        controller: 'QuestionCtrl'
+        controller: 'TestCtrl'
       })
       .when('/correct', {
         templateUrl: 'views/correct.html'

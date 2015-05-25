@@ -1,21 +1,21 @@
-<h3 class="text-center">Cras justo odio</h3>
+<h3 class="text-center">{{dictionary.name}}</h3>
 
 <table class="table">
   <tr>
     <td>Dictionary contains</td>
-    <td class="text-center">23<br>questions</td>
+    <td class="text-center">{{dictionary.questions}}<br>questions</td>
   </tr>
   <tr>
     <td>Trained on</td>
-    <td class="text-center">20<br>questions</td>
+    <td class="text-center">{{score.trained}}<br>questions</td>
   </tr>
   <tr>
     <td>Answered without errors</td>
-    <td class="text-center">18<br>questions</td>
+    <td class="text-center">{{score.correct}}<br>questions</td>
   </tr>
-  <tr>
-    <td>Answered with 1 error</td>
-    <td class="text-center">2<br>questions</td>
+  <tr ng-repeat="mistakeGroup in score.mistakes">
+    <td>Answered with {{mistakeGroup.mistakes}} errors</td>
+    <td class="text-center">{{mistakeGroup.questions}}<br>questions</td>
   </tr>
 </table>
 
