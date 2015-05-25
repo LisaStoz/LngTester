@@ -25,14 +25,14 @@ angular.module('lngTesterApp')
     var r;
 
     var add = function(){
-
+      questions = questions.concat(questions.slice(r, r+1));
+      length = questions.length;
     };
 
     var remove = function(){
-
+      questions.splice(r, 1);
+      length = questions.length;
     };
-
-
 
     var generateQuestion = function(){
       r = Math.floor(Math.random() * length);
@@ -40,6 +40,9 @@ angular.module('lngTesterApp')
 
     // Public API here
     return {
+      questionsLeft: function(){
+        return length > 0;
+      },
       next: function() {
         generateQuestion();
         return questions[r];

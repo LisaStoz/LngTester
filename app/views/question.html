@@ -11,7 +11,7 @@
   <div class="form-group">
     <label class="sr-only" for="answer">Your answer</label>
     <div class="input-group">
-      <input ng-disabled="isCorrect()" type="text" ng-model="user.answer" class="form-control" id="answer" placeholder="Answer">
+      <input ng-disabled="isCorrect()" ng-keyup="processKey($event)" type="text" ng-model="user.answer" class="form-control" id="answer" placeholder="Answer">
       <div ng-click="submitAnswer()" class="input-group-addon btn-success">OK</div>
     </div>
   </div>

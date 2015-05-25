@@ -6,16 +6,16 @@
     <td class="text-center">{{dictionary.questions}}<br>questions</td>
   </tr>
   <tr>
-    <td>Trained on</td>
-    <td class="text-center">{{score.trained}}<br>questions</td>
+    <td>Asked</td>
+    <td class="text-center">{{score.correct + score.mistakes}}<br>times</td>
   </tr>
   <tr>
-    <td>Answered without errors</td>
-    <td class="text-center">{{score.correct}}<br>questions</td>
+    <td>Answered correctly</td>
+    <td class="text-center">{{score.correct}}<br>times</td>
   </tr>
-  <tr ng-repeat="mistakeGroup in score.mistakes">
-    <td>Answered with {{mistakeGroup.mistakes}} errors</td>
-    <td class="text-center">{{mistakeGroup.questions}}<br>questions</td>
+  <tr>
+    <td>Answered incorrectly</td>
+    <td class="text-center">{{score.mistakes}}<br>times</td>
   </tr>
 </table>
 

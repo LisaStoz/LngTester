@@ -8,7 +8,7 @@
  * Controller of the lngTesterApp
  */
 angular.module('lngTesterApp')
-  .controller('TestCtrl', function ($scope, $timeout, questions) {
+  .controller('TestCtrl', function ($scope, $timeout, $location, $routeParams, questions) {
 
     var correct;
 
@@ -46,7 +46,19 @@ angular.module('lngTesterApp')
       if ($scope.user) {
         $scope.user.answer = '';
       }
-      $scope.question = questions.next();
+      if (questions.questionsLeft()) {
+        $scope.question = questions.next();
+      } else {
+        $location.path( '/details/'+$routeParams.dictionaryId );
+      }
+
+    };
+
+    $scope.processKey = function(e){
+      var code = e.which || e.keyCode;
+      if (code === 13) {
+        $scope.submitAnswer();
+      }
     };
 
   });

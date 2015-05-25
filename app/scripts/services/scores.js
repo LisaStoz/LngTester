@@ -12,33 +12,32 @@ angular.module('lngTesterApp')
 
     var scores = {
       'lecture1': {
-        'trained': 19,
         'correct': 18,
-        'mistakes': [
-          {
-            'mistakes': 2,
-            'questions': 1
-          }
-        ],
-        'unanswered': 0
+        'mistakes': 2
       },
       'lecture2': {
-        'trained': 20,
         'correct': 18,
-        'mistakes': [
-          {
-            'mistakes': 2,
-            'questions': 1
-          }
-        ],
-        'unanswered': 1
+        'mistakes': 2
       }
     };
 
+    var score, newScore;
+
     // Public API here
     return {
-      getScore: function (id) {
-        return scores[id];
+      loadScore: function(id){
+        score = scores[id];
+      },
+      getScore: function () {
+        return score;
+      },
+      createScore: function(id){
+        newScore = {};
+        newScore[id] = {
+          correct: 0,
+          mistakes: 0
+        };
       }
+
     };
   });
