@@ -8,10 +8,6 @@
  * Controller of the lngTesterApp
  */
 angular.module('lngTesterApp')
-  .controller('TestCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('TestCtrl', function ($scope, questions) {
+    $scope.question = questions.next();
   });
