@@ -16,5 +16,8 @@ angular.module('lngTesterApp')
 
     $scope.score = scores.loadScore(dictionaryId);
     $scope.score = scores.getScore();
+    $scope.getId = function(){
+      return dictionaryId;
+    };
 
   });
